@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<section class="card">
+  <h1>Katalog Buku</h1>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">Daftar buku perpustakaan</caption>
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Judul</th>
+          <th scope="col">Penulis</th>
+          <th scope="col">Tahun</th>
+          <th scope="col">Kategori</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% daftarBuku.forEach((buku, i) => { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= buku.judul %></td>
+            <td><%= buku.penulis %></td>
+            <td><%= buku.tahun %></td>
+            <td><%= buku.kategori %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <p><a class="btn" href="/katalog/tambah">+ Tambah Buku</a></p>
+</section>
+
+<%- include('../partials/footer') %>

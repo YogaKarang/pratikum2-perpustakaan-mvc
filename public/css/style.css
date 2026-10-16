@@ -1,0 +1,82 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { line-height: 1.6; }
+img, svg { display: block; max-width: 100%; }
+input, button, select { font: inherit; }
+table { border-collapse: collapse; width: 100%; }
+
+:root {
+  --bg: #f1f5f9;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #1d4ed8;
+  --primary-dark: #1e3a8a;
+  --border: #cbd5e1;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { font-weight: 700; font-size: 1.15rem; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.site-header nav a { color: #fff; text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+.site-header nav a:hover { border-bottom-color: #fff; }
+
+main { flex: 1; width: 100%; max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+.site-footer { text-align: center; padding: 1.5rem 1rem; font-size: .875rem; color: var(--muted); }
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+.card h1 { margin-bottom: 1rem; }
+.card p { margin-bottom: 1rem; }
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: .6rem 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: var(--primary-dark); }
+
+.table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+th, td { padding: .6rem .75rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: #e2e8f0; }
+
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.field input, .field select {
+  width: 100%;
+  padding: .55rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+.skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: .5rem 1rem; z-index: 10; }
+.skip-link:focus { left: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<section class="card">
+  <h1>Form Tambah Buku</h1>
+  <form action="/katalog/tambah" method="POST">
+    <div class="field">
+      <label for="judul">Judul Buku</label>
+      <input type="text" id="judul" name="judul" required>
+    </div>
+    <div class="field">
+      <label for="penulis">Penulis</label>
+      <input type="text" id="penulis" name="penulis" required>
+    </div>
+    <div class="field">
+      <label for="tahun">Tahun Terbit</label>
+      <input type="number" id="tahun" name="tahun" min="1000" max="2100" required>
+    </div>
+    <div class="field">
+      <label for="kategori">Kategori</label>
+      <select id="kategori" name="kategori" required>
+        <option value="">-- Pilih kategori --</option>
+        <% kategoriList.forEach(k => { %>
+          <option value="<%= k %>"><%= k %></option>
+        <% }) %>
+      </select>
+    </div>
+    <button type="submit" class="btn">Simpan</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
